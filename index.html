@@ -1,268 +1,66 @@
 <html lang="en">
 <head>
-
-
-<!-- Start of Async Drift Code -->
-<script>
-  "use strict";
-  
-  !function() {
-    var t = window.driftt = window.drift = window.driftt || [];
-    if (!t.init) {
-      if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
-      t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
-      t.factory = function(e) {
-        return function() {
-          var n = Array.prototype.slice.call(arguments);
-          return n.unshift(e), t.push(n), t;
-        };
-      }, t.methods.forEach(function(e) {
-        t[e] = t.factory(e);
-      }), t.load = function(t) {
-        var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
-        o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
-        var i = document.getElementsByTagName("script")[0];
-        i.parentNode.insertBefore(o, i);
-      };
-    }
-  }();
-  drift.SNIPPET_VERSION = '0.3.1';
-  drift.load('s47twx3sxc68');
-  </script>
-  <!-- End of Async Drift Code -->
-
-
-
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
-  <title>404 Found</title>
-
-
-
+  <title>Data-Getter</title>
+  <style>header{
+    background: url(image/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 1000px;
+  }
+  @media screen and (max-width: 670px){
+    header{
+      min-height: 500px;
+    }
+  }
+  .section{
+    padding-top: 4vw;
+    padding-bottom: 4vw;
+  }
+  .tabs .indicator{
+    background-color: #1a237e;
+  }
+  .tabs .tab a:focus, .tabs .tab a:focus.active{
+    background: transparent;
+  }</style>
+</head>
+<body class="grey lighten-3" id="alpha">
 
   
-       
-
-
-
-
-
-
-
-</head>
-<body class="grey lighten-3"">
-
-  <!-- NAVBAR -->
-  <nav class="z-depth-0 grey lighten-4 bg-dark">
+  <nav class="z-depth-0 grey lighten-4">
     <div class="nav-wrapper container">
-      <a href="#" class="brand-logo">
-    
-        <img src="logocarpe.jfif" style="width: 70px; margin-top: 10px;">
-      </a>
-
-
-
       
-      
-
-
-
-
-
-
-
-
-
-
-      
-      
-      
-      
-      
-      
-      
-      
-
-
-
-
-
-
-
-
-
-
-
       <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li class="logged-in" style="display: none;">
-            <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>g
+            <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
           </li>
           <li class="logged-in" style="display: none;">
             <a href="#" class="grey-text" id="logout">Logout</a>
           </li>
-          <li class="admin" style="display: none;">
+          <li class="logged-in" style="display: none;">
             <a href="#" class="grey-text modal-trigger" data-target="modal-create">Create Guide</a>
           </li>
           <li class="logged-out" style="display: none;">
             <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
           </li>
-          <li class="logged-out" style="display: none;">
-            <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+          <li class="logged-in" style="display: none;">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Register</a>
           </li>
         </span>
       </ul>
     </div>
   </nav>
 
-
-
-
   
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-  * {box-sizing: border-box;}
-  body {font-family: Verdana, sans-serif;}
-  .mySlides {display: none;}
-  img {vertical-align: middle;}
-  
-  /* Slideshow container */
-  .slideshow-container {
-    max-width: 2000px;
-    position: relative;
-    margin: auto;
-  }
-  
-  /* Caption text */
-  .text {
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
-  }
-  
-  /* Number text (1/3 etc) */
-  .numbertext {
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-  }
-  
-  /* The dots/bullets/indicators */
-  .dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-  }
-  
-  .active {
-    background-color: #717171;
-  }
-  
-  /* Fading animation */
-  .fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
-  
-  @-webkit-keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-  }
-  
-  @keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-  }
-  
-  /* On smaller screens, decrease text size */
-  @media only screen and (max-width: 500px) {
-    .text {font-size: 11px}
-  }
-  </style>
-  
-  
-  
-  
-  <div class="slideshow-container">
-  
-  <div class="mySlides fade">
-    <div class="numbertext">1 / 3</div>
-    <img src="1.jpg" style="width:100%">
-    <div class="text" style="color:black">BY IMPLEMENTING EVIDENCE -DRIVEN</B> AND <B>PARTNERSHIPS-ENABLED SYSTEMIC SOLUTIONS </B> TO PERVASIVE CIVIC CHALLENGES.</div>
-  </div>
-  
-  <div class="mySlides fade">
-    <div class="numbertext">2 / 3</div>
-    <img src="2.jpg" style="width:100%">
-    <div class="text" >WE AIM TO ACHIEVE <b>INCLUSIVE</b> AND <b>SUSTAINABLE </b>VILLAGES, TOWNS AND CITIES.</div>
-  </div>
-  
-  <div class="mySlides fade">
-    <div class="numbertext">3 / 3</div>
-    <img src="3.jpg" style="width:100%">
-    <div class="text" style="color:black">CLEAN AND <b>GREEN<b>!!!</div>
-  </div>
-  
-  </div>
-  <br>
-  
-  <div style="text-align:center">
-    <span class="dot"></span> 
-    <span class="dot"></span> 
-    <span class="dot"></span> 
-  </div>
-  
-  <script>
-  var slideIndex = 0;
-  showSlides();
-  
-  function showSlides() {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}    
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex-1].style.display = "block";  
-    dots[slideIndex-1].className += " active";
-    setTimeout(showSlides, 3000); // Change image every 2 seconds
-  }
-  </script>
-  
-
-  
-
-
-
-  <!-- ADMIN ACTIONS -->
-  <form class="center-align admin-actions admin" style="margin: 40px auto; max-width: 300px; display: none;">
-    <input type="email" placeholder="User email" id="admin-email" required />
-    <button class="btn-small yellow darken-2 z-depth-0">Make admin</button>
-  </form>
-
-  <!-- SIGN UP MODAL -->
   <div id="modal-signup" class="modal">
     <div class="modal-content">
       <h4>Sign up</h4><br />
@@ -277,10 +75,9 @@
         </div>
         <div class="input-field">
           <input type="text" id="signup-bio" required />
-          <label for="signup-bio">One Line Bio</label>
+          <label for="signup-bio">User/Viewer</label>
         </div>
         <button class="btn yellow darken-2 z-depth-0">Sign up</button>
-        <p class="error pink-text center-align"></p>
       </form>
     </div>
   </div>
@@ -299,12 +96,35 @@
           <label for="login-password">Your password</label>
         </div>
         <button class="btn yellow darken-2 z-depth-0">Login</button>
-        <p class="error pink-text center-align"></p>
       </form>
     </div>
   </div>
 
+  <!-- ACCOUNT MODAL -->
+  <div id="modal-account" class="modal">
+    <div class="modal-content center-align">
+      <h4>Account details</h4><br />
+      <div class="account-details"></div>
+    </div>
+  </div>
 
+  <!-- CREATE GUIDE MODAL -->
+  <div id="modal-create" class="modal">
+    <div class="modal-content">
+      <h4>Create Guide</h4><br />
+      <form id="create-form">
+        <div class="input-field">
+          <input type="text" id="title" required>
+          <label for="title">Form Name</label>
+        </div>
+        <div class="input-field">
+          <input type="text" id="content" required>
+          <label for="title">Enter your Question Here</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Create</button>
+      </form>
+    </div>
+  </div>
 
   <!-- GUIDE LIST -->
   <div class="container" style="margin-top: 40px;">
@@ -312,37 +132,204 @@
 
     </ul>
   </div>
+  <div class="logged-out">
+    
   
-  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-functions.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyDlDUJhsP0_uh-YpaRfTOhWZsyY_hLukTw",
-      authDomain: "net-ninja-sandbox.firebaseapp.com",
-      databaseURL: "https://net-ninja-sandbox.firebaseio.com",
-      projectId: "net-ninja-sandbox"
-    };
-    firebase.initializeApp(config);
+    <!-- photo / grid -->
+    <section class="container section scrollspy" id="photos">
+      <div class="row">
+        <div class="col s12 l4">
+            <img src="img/z.jpg" alt="" class="responsive-img materialboxed">
+        </div>
+        <div class="col s12 l6 offset-l1">
+          <h2 class="indigo-text text-darken-4">SOLID WASTE MANAGEMENT</h2>
+          <p>We focus on data driven and research based methodologies to focus on systemic overhaul of solid waste management processes of cities, towns and villages. We work with Urban Local Bodies and Gram Panchayats to optimize the use of existing resources to provide effective solid waste management services.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 l4 offset-l1 push-l7">
+            <img src="img/x.jpg" alt="" class="responsive-img materialboxed">
+        </div>
+        <div class="col s12 l6 offset-l1 pull-l5 right-align">
+          <h2 class="indigo-text text-darken-4">GREEN COVER MANAGEMENT</h2>
+          <p>Our cities towns and villages are reeling under the effects of climate change. A direct consequence of the lack of trees and green cover in human habitats, is the heat island effect, as well as a lack of recreational spaces for children, youth and the elderly. We build and deliver solutions to address this problem..</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 l4">
+            <img src="img/c.jpg" alt="" class="responsive-img materialboxed">
+        </div>
+        <div class="col s12 l6 offset-l1">
+          <h2 class="indigo-text text-darken-4">WASTE WATER MANAGEMENT</h2>
+          <p>We realize the importance water to support our green cover projects and to sustain green cover of any urban forest. However, since inception we have been focused on treating waste water or reusing water to support our projects. To be able to do so we have worked on Nala cleaning and setting up of Eco STP projects.
+
+            Click here to know more</p>
+        </div>
+      </div>
+    </section>
+  
+    <!-- parallax -->
+    <div class="parallax-container">
+      <div class="parallax">
+        <img src="img/was.jpg" alt="" class="responsive-img">
+      </div>
+    </div>
+  
+    <!-- services / tabs -->
+    <section class="section container scrollspy" id="services">
+      <div class="row">
+        <div class="col s12 l4">
+          <h2 class="indigo-text text-darken-4">What We do..</h2>
+          <p>CARPE is a not-for-profit company registered under Sec. 8 of the Indian Companies Act, 2013. It is based in Aurangabad, Maharashtra.
+           While Solid Waste Management has been our first area of focus, we have diversified with a focus on actionable research to assist in driving measurable social impact in various fields through Corporate Social Responsibility (CSR).
+          </p>
+        </div>
+        <div class="col s12 l6 offset-l2">
+          <!-- tabs -->
+          <ul class="tabs">
+            <li class="tab col s6">
+              <a href="#photography" class="active indigo-text text-darken-4">SOLID WASTE MANAGEMENT
+              </a>
+            </li>
+            <li class="tab col s6">
+              <a href="#editing" class="indigo-text text-darken-4">Green Cover Management</a>
+            </li>
+          </ul>
+          <div id="photography" class="col s12">
+              <p class="flow-text indigo-text text-darken-4">SOLID WASTE MANAGEMENT</p>
+              <p>We focus on data driven and research based methodologies to focus on systemic overhaul of solid waste management processes of cities, towns and villages. We work with Urban Local Bodies and Gram Panchayats to optimize the use of existing resources to provide effective solid waste management services.
+
+                Click here to know more.</p>
+          </div>
+          <div id="editing" class="col s12">
+              <p class="flow-text indigo-text text-darken-4">Green Cover Management</p>
+              <p>Our cities towns and villages are reeling under the effects of climate change. A direct consequence of the lack of trees and green cover in human habitats, is the heat island effect, as well as a lack of recreational spaces for children, youth and the elderly. We build and deliver solutions to address this problem.
+
+              </p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- parallax -->
+    <div class="parallax-container">
+      <div class="parallax">
+        <img src="img/2.jpg" alt="" class="responsive-img">
+      </div>
+    </div>
+  
+    <!-- contact form -->
+    <section class="section container scrollspy" id="contact">
+      <div class="row">
+        <div class="col s12 l5">
+          <h2 class="indigo-text text-darken-4">
+        </div>
+        <div class="col s12 l5 offset-l2">
+          <form>
+            <div class="input-field">
+              <i class="material-icons prefix">email</i>
+              <input type="email" id="email">
+              <label for="email">Your Email</label>
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix">message</i>
+              <textarea id="message" class="materialize-textarea" cols="20" rows="20"></textarea>
+              <label for="message">Your Message</label>
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix">date_range</i>
+              <input type="text" id="date" class="datepicker">
+              <label for="date">Choose a date you need me for...</label>
+            </div>
+            <div class="input-field">
+              <p>Services required:</p>
+              <p>
+                <label>
+                  <input type="checkbox">
+                  <span>User</span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox">
+                  <span>Viewer/span>
+                </label>
+              </p>
+            </div>
+            <div class="input-field center">
+              <button class="btn">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  
+    <!-- footer -->
+    
+      <div class="footer-copyright grey darken-4">
+        <div class="container center-align white-text">&copy; 2020 Carepe</div>
+      </div>
+    </footer>
+  </div>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script>
+      $(document).ready(function(){
+  
+        $('.sidenav').sidenav();
+        $('.materialboxed').materialbox();
+        $('.parallax').parallax();
+        $('.tabs').tabs();
+        $('.datepicker').datepicker({
+          disableWeekends: true,
+          yearRange: 1
+        });
+        $('.tooltipped').tooltip();
+        $('.scrollspy').scrollSpy();
+  
+      });
+    </script>
+ 
+  
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDuQd6lCO7JRYCHPIAkWn3aorizKYesAI8",
+    authDomain: "cfgproject-c33df.firebaseapp.com",
+    databaseURL: "https://cfgproject-c33df.firebaseio.com",
+    projectId: "cfgproject-c33df",
+    storageBucket: "cfgproject-c33df.appspot.com",
+    messagingSenderId: "450723055305",
+    appId: "1:450723055305:web:5bd0544852726c215d2f18",
+    measurementId: "G-8JE61KKPVY"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
     
     // make auth and firestore references
     const auth = firebase.auth();
     const db = firebase.firestore();
-    const functions = firebase.functions();
 
     // update firestore settings
-    db.settings({ timestampsInSnapshots: true });
+  
   </script>
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="scripts/auth.js"></script>
   <script src="scripts/index.js"></script>
-  <!-- JS, Popper.js, and jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
+  <script></script>
 </body>
 </html>
