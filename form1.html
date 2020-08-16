@@ -1,9 +1,54 @@
+<!-- <html>
+    <head>
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <h1>Cloud Cafe</h1>
+
+        <div class="content">
+
+            <form id="add-cafe-form">
+                <input type="text" name="name" placeholder="Cafe name">
+                <input type="text" name="city" placeholder="Cafe city">
+                <button>Add Cafe</button>
+            </form>
+
+            <ul id="cafe-list"></ul>
+
+        </div>
+
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyDuQd6lCO7JRYCHPIAkWn3aorizKYesAI8",
+                authDomain: "cfgproject-c33df.firebaseapp.com",
+                databaseURL: "https://cfgproject-c33df.firebaseio.com",
+                projectId: "cfgproject-c33df",
+                storageBucket: "cfgproject-c33df.appspot.com",
+                messagingSenderId: "450723055305",
+                appId: "1:450723055305:web:5bd0544852726c215d2f18",
+                measurementId: "G-8JE61KKPVY"
+            };
+            firebase.initializeApp(config);
+            const db = firebase.firestore();
+            db.settings({ timestampsInSnapshots: true }); 
+        </script>
+        <script src="app.js"></script>
+    </body>
+</html> -->
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FORM FOR USERS</title>
+    <title>Volunteer Sign up form</title>
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>  
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <style>
       html, body {
       min-height: 100%;
@@ -14,7 +59,7 @@
       outline: none;
       font-family: Roboto, Arial, sans-serif;
       font-size: 14px;
-      color: black;
+      color: #666;
       line-height: 22px;
       }
       h1 {
@@ -45,11 +90,9 @@
       }
       .banner {
       position: relative;
-      height: 400px;
-      background-image: url("worker.jpg"); 
-      background-repeat: no-repeat; 
+      height: 300px;
+      background-image: url("worker.jfif");  
       background-size: cover;
-      
       display: flex;
       justify-content: center;
       align-items: center;
@@ -199,28 +242,28 @@
     </style>
   </head>
   <body>
-    <div class="testbox">
-      <form action="/">
+    <div class="testbox" >
+      <form id="database1">
         <div class="banner">
-          <h1>FORM FOR USERS</h1>
+          <h1>Form</h1>
         </div>
         
         <div class="colums">
           <div class="item">
-            <label >Vechicle number<span>*</span></label>
-            <input id="Vechiclenumber" type="text" name="Vechiclenumber" required/>
+            <label >Vehicle number<span>*</span></label>
+            <input id="Vechicalnumber" type="text" name="Vechicalnumber" required/>
           </div>
           <div class="item">
-            <label >Amount of Waste(in kg)<span>*</span></label>
-            <input id="Amountofwaste" type="number"   name="Amountofwaste" required/>
+            <label >Amount of Waste<span>*</span></label>
+            <input id="Amountofwaste" type="text"   name="Amountofwaste" required/>
           </div>
-          <div class="item">
+<!--           <div class="item">
             <label for="photo">Photo<span>*</span></label>
             <input id="photo" type="file"   name="photo" required/>
-          </div>
+          </div> -->
           <div class="item">
             <label >Name of person<span>*</span></label>
-            <input id="nameofperson" type="text"   name="nameofperson" required/>
+            <input id="name" type="text"   name="name" required/>
           </div>
           <div class="item">
             <label >location<span>*</span></label>
@@ -232,16 +275,39 @@
           </div>
           <div class="item">
             <label >Date<span>*</span></label>
-            <input id="Date" type="Date"   name="Date" required/>
+            <input id="Date" type="date"   name="date" required/>
           </div>
         </div>
         
         <div class="item">
           
         <div class="btn-block">
-          <button type="submit" href="/">Submit</button>
+          <button type="submit">Submit</button>
         </div>
+        <ul id="list-of-data"></ul>
       </form>
+      <a href="vis.html">visualize</a>
     </div>
+    <script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDuQd6lCO7JRYCHPIAkWn3aorizKYesAI8",
+    authDomain: "cfgproject-c33df.firebaseapp.com",
+    databaseURL: "https://cfgproject-c33df.firebaseio.com",
+    projectId: "cfgproject-c33df",
+    storageBucket: "cfgproject-c33df.appspot.com",
+    messagingSenderId: "450723055305",
+    appId: "1:450723055305:web:5bd0544852726c215d2f18",
+    measurementId: "G-8JE61KKPVY"
+  };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+          firebase.analytics();
+          const db=firebase.firestore();
+          
+        </script>
+        <script src="app.js"></script>
+
+   
   </body>
 </html>
